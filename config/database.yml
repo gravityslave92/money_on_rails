@@ -17,9 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  user: 'timur'
-  password: 'timur'
-  host: 'localhost'
+  user: <%= Rails.application.credentials.db[:user] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:host] %>
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>

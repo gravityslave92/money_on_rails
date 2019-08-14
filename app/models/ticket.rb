@@ -1,11 +1,13 @@
 class Ticket < ApplicationRecord
-  belongs_to :user
+  include HasReference
+
+  belongs_to :user, optional: true
   belongs_to :performance
   has_one :event, through: :performance
   monetize :price_cents
 
-  enum status: {unsold: 0, waiting: 1}
-  enum access: {general: 0}
+  enum status: { unsold: 0, waiting: 1, purchased: 2 }
+  enum access: { general: 0 }
 
   def place_in_cart_for(user)
     update(status: :waiting, user: user)

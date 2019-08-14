@@ -17,7 +17,7 @@ feature "User delete", :devise do
   #   When I delete my account
   #   Then I should see an account deleted message
   scenario "user can delete own account" do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     login_as(user, scope: :user)
     visit edit_user_registration_path(user)
     click_button "Cancel my account"

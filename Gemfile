@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.2'
+ruby '2.6.3'
 
 gem 'awesome_print'
 gem 'babel-transpiler'
@@ -20,6 +20,7 @@ gem 'pundit'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'stripe'
 gem 'slim-rails', github: 'slim-template/slim-rails'
 gem 'sprockets', github: 'rails/sprockets'
 gem 'turbolinks', '~> 5'
@@ -41,8 +42,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'pry-rails'
-  gem 'pry-rescue'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rubocop'
 end
@@ -51,6 +51,11 @@ group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'database_cleaner'
+  gem 'fake_stripe'
   gem 'launchy'
+  gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'sinatra', github: 'sinatra/sinatra'
+  gem 'vcr'
+  gem 'webmock'
 end

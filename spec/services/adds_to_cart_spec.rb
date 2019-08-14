@@ -1,5 +1,4 @@
 require "rails_helper"
-
 describe AddsToCartService do
 
   let(:user) { instance_double(User) }
