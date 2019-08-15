@@ -8,7 +8,8 @@ class Payment < ApplicationRecord
            source_type: "Ticket", source: :buyable
 
   monetize :price_cents
-  enum status: %i[ created succeeded ]
+
+  enum status: {created: 0, succeeded: 1, pending: 2}
 
   def total_cost
     tickets.map(&:price).sum

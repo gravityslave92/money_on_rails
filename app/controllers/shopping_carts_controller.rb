@@ -7,13 +7,13 @@ class ShoppingCartsController < ApplicationController
 
   def update
     performance = Performance.find(params[:performance_id])
-    workflow = AddsToCartService.call(
+    workflow = AddsToCart.new(
       user: current_user, performance: performance,
       count: params[:ticket_count].to_i
     )
+    workflow.run
 
-
-    if workflow
+    if workflow.success
       redirect_to shopping_cart_path
     else
       redirect_to performance.event

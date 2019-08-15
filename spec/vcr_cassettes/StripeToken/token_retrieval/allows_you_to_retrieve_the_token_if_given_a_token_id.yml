@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-Telemetry:
-      - '{"last_request_metrics":{"request_id":"req_kg72OggVZdkXHm","request_duration_ms":541}}'
+      - '{"last_request_metrics":{"request_id":"req_fZUJP7aNHzFdKh","request_duration_ms":800}}'
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
         version 4.15.0-55-generic (buildd@lcy01-amd64-029) (gcc version 7.4.0 (Ubuntu
@@ -35,7 +35,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 14 Aug 2019 14:35:35 GMT
+      - Thu, 15 Aug 2019 11:37:00 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -55,7 +55,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_tVwywbuKXRYoCR
+      - req_0ObKLqpzRClrIX
       Stripe-Version:
       - '2019-05-16'
       Strict-Transport-Security:
@@ -64,10 +64,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1F7NZbB53GvrOnE7eVI83hgK",
+          "id": "tok_1F7hGKB53GvrOnE7Rv7MeHHL",
           "object": "token",
           "card": {
-            "id": "card_1F7NZbB53GvrOnE79PdP5U5M",
+            "id": "card_1F7hGKB53GvrOnE7mMKhUm3z",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -92,16 +92,16 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "94.19.72.180",
-          "created": 1565793335,
+          "created": 1565869020,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Wed, 14 Aug 2019 14:35:35 GMT
+  recorded_at: Thu, 15 Aug 2019 11:37:00 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/tokens/tok_1F7NZbB53GvrOnE7eVI83hgK
+    uri: https://api.stripe.com/v1/tokens/tok_1F7hGKB53GvrOnE7Rv7MeHHL
     body:
       encoding: US-ASCII
       string: ''
@@ -113,7 +113,7 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-Telemetry:
-      - '{"last_request_metrics":{"request_id":"req_tVwywbuKXRYoCR","request_duration_ms":480}}'
+      - '{"last_request_metrics":{"request_id":"req_0ObKLqpzRClrIX","request_duration_ms":650}}'
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
         version 4.15.0-55-generic (buildd@lcy01-amd64-029) (gcc version 7.4.0 (Ubuntu
@@ -134,7 +134,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 14 Aug 2019 14:35:35 GMT
+      - Thu, 15 Aug 2019 11:37:00 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -154,7 +154,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_KUmdkRRTiMnUDD
+      - req_VWBCUyjXGQyD6F
       Stripe-Version:
       - '2019-05-16'
       Strict-Transport-Security:
@@ -163,10 +163,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1F7NZbB53GvrOnE7eVI83hgK",
+          "id": "tok_1F7hGKB53GvrOnE7Rv7MeHHL",
           "object": "token",
           "card": {
-            "id": "card_1F7NZbB53GvrOnE79PdP5U5M",
+            "id": "card_1F7hGKB53GvrOnE7mMKhUm3z",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -191,11 +191,11 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "94.19.72.180",
-          "created": 1565793335,
+          "created": 1565869020,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Wed, 14 Aug 2019 14:35:35 GMT
+  recorded_at: Thu, 15 Aug 2019 11:37:00 GMT
 recorded_with: VCR 5.0.0

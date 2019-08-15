@@ -4,25 +4,46 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    token = StripeToken.new(**card_params)
-    payment = PurchasesCartService.call(
-      user: current_user,
-      stripe_token: token,
-      purchase_amount_cents: params[:purchase_amount_cents]
-    )
+    workflow = create_workflow(params[:payment_type])
+    workflow.run
 
-    if payment
-      redirect_to payment_path(id: payment.reference)
+    if workflow.success
+      redirect_to workflow.redirect_on_success_url ||
+                  payment_path(id: workflow.payment.reference)
     else
       redirect_to shopping_cart_path
     end
   end
 
-  private def card_params
+  private
+
+  def card_params
     params.permit(
     :credit_card_number, :expiration_month,
     :expiration_year, :cvc, :stripe_token).to_h.symbolize_keys
   end
 
+  def create_workflow(payment_type)
+    case payment_type
+    when "paypal"
+      paypal_workflow
+    else
+      stripe_workflow
+    end
+  end
 
+  def stripe_workflow
+    PurchasesCartViaStripe.new(
+      user: current_user,
+      stripe_token: StripeToken.new(**card_params),
+      purchase_amount_cents: params[:purchase_amount_cents]
+    )
+  end
+
+  def paypal_workflow
+    PurchasesCartViaPayPal.new(
+      user: current_user,
+      purchase_amount_cents: params[:purchase_amount_cents]
+    )
+  end
 end
