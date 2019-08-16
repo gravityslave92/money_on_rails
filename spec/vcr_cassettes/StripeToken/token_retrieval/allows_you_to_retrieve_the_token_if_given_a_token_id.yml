@@ -13,12 +13,10 @@ http_interactions:
       - Bearer sk_test_WFnDlWuxyB29J3jOhAfUE2pq
       Content-Type:
       - application/x-www-form-urlencoded
-      X-Stripe-Client-Telemetry:
-      - '{"last_request_metrics":{"request_id":"req_fZUJP7aNHzFdKh","request_duration_ms":800}}'
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
-        version 4.15.0-55-generic (buildd@lcy01-amd64-029) (gcc version 7.4.0 (Ubuntu
-        7.4.0-1ubuntu1~18.04.1)) #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019","hostname":"timur"}'
+        version 4.15.0-58-generic (buildd@lcy01-amd64-013) (gcc version 7.4.0 (Ubuntu
+        7.4.0-1ubuntu1~18.04.1)) #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019","hostname":"timur"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -35,7 +33,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Aug 2019 11:37:00 GMT
+      - Fri, 16 Aug 2019 12:31:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -55,7 +53,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_0ObKLqpzRClrIX
+      - req_wslhclMtFiknpn
       Stripe-Version:
       - '2019-05-16'
       Strict-Transport-Security:
@@ -64,10 +62,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1F7hGKB53GvrOnE7Rv7MeHHL",
+          "id": "tok_1F84atB53GvrOnE769DquvRD",
           "object": "token",
           "card": {
-            "id": "card_1F7hGKB53GvrOnE7mMKhUm3z",
+            "id": "card_1F84atB53GvrOnE7zyT1wHIH",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -92,16 +90,16 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "94.19.72.180",
-          "created": 1565869020,
+          "created": 1565958707,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 15 Aug 2019 11:37:00 GMT
+  recorded_at: Fri, 16 Aug 2019 12:31:47 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/tokens/tok_1F7hGKB53GvrOnE7Rv7MeHHL
+    uri: https://api.stripe.com/v1/tokens/tok_1F84atB53GvrOnE769DquvRD
     body:
       encoding: US-ASCII
       string: ''
@@ -113,11 +111,11 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-Telemetry:
-      - '{"last_request_metrics":{"request_id":"req_0ObKLqpzRClrIX","request_duration_ms":650}}'
+      - '{"last_request_metrics":{"request_id":"req_wslhclMtFiknpn","request_duration_ms":641}}'
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
-        version 4.15.0-55-generic (buildd@lcy01-amd64-029) (gcc version 7.4.0 (Ubuntu
-        7.4.0-1ubuntu1~18.04.1)) #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019","hostname":"timur"}'
+        version 4.15.0-58-generic (buildd@lcy01-amd64-013) (gcc version 7.4.0 (Ubuntu
+        7.4.0-1ubuntu1~18.04.1)) #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019","hostname":"timur"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -134,7 +132,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 15 Aug 2019 11:37:00 GMT
+      - Fri, 16 Aug 2019 12:31:48 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -154,7 +152,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_VWBCUyjXGQyD6F
+      - req_pDR234FsH8Vypg
       Stripe-Version:
       - '2019-05-16'
       Strict-Transport-Security:
@@ -163,10 +161,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1F7hGKB53GvrOnE7Rv7MeHHL",
+          "id": "tok_1F84atB53GvrOnE769DquvRD",
           "object": "token",
           "card": {
-            "id": "card_1F7hGKB53GvrOnE7mMKhUm3z",
+            "id": "card_1F84atB53GvrOnE7zyT1wHIH",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -191,11 +189,11 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "94.19.72.180",
-          "created": 1565869020,
+          "created": 1565958707,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Thu, 15 Aug 2019 11:37:00 GMT
+  recorded_at: Fri, 16 Aug 2019 12:31:48 GMT
 recorded_with: VCR 5.0.0

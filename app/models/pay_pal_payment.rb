@@ -52,6 +52,32 @@ class PayPalPayment
     pay_pal_payment.id
   end
 
+  def pay_pal_transaction
+    pay_pal_payment.transactions.first
+  end
+
+  def pay_pay_amount
+    Money.new(pay_pal_transaction.amount.total.to_f * 100)
+  end
+
+  def price_valid?
+    pay_pal_amont == payment.price
+  end
+
+  def pay_pal_ticket_ids
+    line_item_ids = pay_pal_transaction.items.map(&:name).map!(&:to_i)
+    line_items = line_item_ids.map { |id| PurchaseLineItem.find(id) }
+    line_items.flat_map(&:tickets).map!(&:id).sort!
+  end
+
+  def item_valid?
+    payment.sorted_ticket_ids == pay_pal_ticket_ids
+  end
+
+  def valid?
+    price_valid? && item_valid?
+  end
+
   class << self
     def find(payment_id)
       PayPal::SDK::REST::Payment.find(payment_id)

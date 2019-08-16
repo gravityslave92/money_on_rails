@@ -31,7 +31,7 @@ class StripeCharge
 
   def success_attributes
     {
-      status: :succeeded,
+      status: response.status,
       response_id: response.id,
       full_response: response.to_json
     }
@@ -46,7 +46,9 @@ class StripeCharge
 
   class << self
     def charge(token:, payment:)
-      StripeCharge.new(token, payment).charge
+      stripe_charge = new(token, payment)
+      stripe_charge.charge
+      stripe_charge
     end
   end
 end

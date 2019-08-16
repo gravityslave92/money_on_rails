@@ -1,4 +1,5 @@
-class PurchasesCartViaPayPal < PurchasesCart
+class PreparesCartForPayPal < PreparesCart
+
   attr_accessor :pay_pal_payment
 
   def update_tickets
@@ -14,12 +15,14 @@ class PurchasesCartViaPayPal < PurchasesCart
   end
 
   def calculate_success
-    self.success = payment.pending?
+    @success = payment.pending?
   end
 
-  def purchase
-    self.pay_pal_payment = PayPalPayment.new(payment: payment)
-    payment.update(response_id: pay_pal_payment.response_id)
+  def on_success
+    @pay_pal_payment = PayPalPayment.new(payment: payment)
+    payment.update!(response_id: pay_pal_payment.response_id)
     payment.pending!
+    reverse_purchase if payment.failed?
   end
+
 end

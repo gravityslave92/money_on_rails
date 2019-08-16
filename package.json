@@ -1,5 +1,7 @@
 {
   "name": "tke_my_money",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery.payment": "^3.0.0"
+  }
 }

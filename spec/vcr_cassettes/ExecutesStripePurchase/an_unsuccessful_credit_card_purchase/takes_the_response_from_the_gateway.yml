@@ -1,0 +1,181 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: UTF-8
+      string: card[number]=4000000000000002&card[exp_month]=12&card[exp_year]=2020&card[cvc]=123
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/4.24.0
+      Authorization:
+      - Bearer sk_test_WFnDlWuxyB29J3jOhAfUE2pq
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 4.15.0-58-generic (buildd@lcy01-amd64-013) (gcc version 7.4.0 (Ubuntu
+        7.4.0-1ubuntu1~18.04.1)) #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019","hostname":"timur"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 16 Aug 2019 12:32:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '785'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_b5pN67fL5YQo9r
+      Stripe-Version:
+      - '2019-05-16'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_1F84bXB53GvrOnE7l8Ecbndy",
+          "object": "token",
+          "card": {
+            "id": "card_1F84bXB53GvrOnE79MChhqvT",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "cvc_check": "unchecked",
+            "dynamic_last4": null,
+            "exp_month": 12,
+            "exp_year": 2020,
+            "fingerprint": "gd9BMi0tarCD2PCz",
+            "funding": "credit",
+            "last4": "0002",
+            "metadata": {
+            },
+            "name": null,
+            "tokenization_method": null
+          },
+          "client_ip": "94.19.72.180",
+          "created": 1565958747,
+          "livemode": false,
+          "type": "card",
+          "used": false
+        }
+    http_version: 
+  recorded_at: Fri, 16 Aug 2019 12:32:27 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: UTF-8
+      string: amount=2500&currency=usd&source=tok_1F84bXB53GvrOnE7l8Ecbndy&description=&metadata[reference]=9698fa45d63c2ae24682
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/4.24.0
+      Authorization:
+      - Bearer sk_test_WFnDlWuxyB29J3jOhAfUE2pq
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_b5pN67fL5YQo9r","request_duration_ms":527}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 4.15.0-58-generic (buildd@lcy01-amd64-013) (gcc version 7.4.0 (Ubuntu
+        7.4.0-1ubuntu1~18.04.1)) #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019","hostname":"timur"}'
+      Idempotency-Key:
+      - 9698fa45d63c2ae24682
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 16 Aug 2019 12:32:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '269'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 9698fa45d63c2ae24682
+      Original-Request:
+      - req_SNVFdJFBsJjL3p
+      Request-Id:
+      - req_SNVFdJFBsJjL3p
+      Stripe-Version:
+      - '2019-05-16'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "charge": "ch_1F84bXB53GvrOnE71mBjaD00",
+            "code": "card_declined",
+            "decline_code": "generic_decline",
+            "doc_url": "https://stripe.com/docs/error-codes/card-declined",
+            "message": "Your card was declined.",
+            "type": "card_error"
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 16 Aug 2019 12:32:28 GMT
+recorded_with: VCR 5.0.0
