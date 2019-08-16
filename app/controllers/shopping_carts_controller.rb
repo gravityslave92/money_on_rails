@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ShoppingCartsController < ApplicationController
   def show
     @cart = ShoppingCart.new(current_user)
