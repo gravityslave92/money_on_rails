@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/plans
+    body:
+      encoding: UTF-8
+      string: id=basic_monthly_1565972544&amount=2000&currency=usd&interval=month&name=Basic+Monthly
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/4.24.0
+      Authorization:
+      - Bearer sk_test_WFnDlWuxyB29J3jOhAfUE2pq
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_RoTbXhCEKQa0cy","request_duration_ms":0}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"4.24.0","lang":"ruby","lang_version":"2.6.3 p62 (2019-04-16)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 4.15.0-58-generic (buildd@lcy01-amd64-013) (gcc version 7.4.0 (Ubuntu
+        7.4.0-1ubuntu1~18.04.1)) #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019","hostname":"timur"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 16 Aug 2019 16:22:25 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '234'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_CjyzU1pBChTNye
+      Stripe-Version:
+      - '2019-05-16'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "code": "parameter_unknown",
+            "doc_url": "https://stripe.com/docs/error-codes/parameter-unknown",
+            "message": "Received unknown parameter: name",
+            "param": "name",
+            "type": "invalid_request_error"
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 16 Aug 2019 16:22:25 GMT
+recorded_with: VCR 5.0.0

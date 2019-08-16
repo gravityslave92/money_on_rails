@@ -4,21 +4,23 @@ h3 Payment Options
   class: "credit-card-form form-horizontal", id: "payment-form") do
 
   = hidden_field_tag(:purchase_amount_cents, @cart.total_cost.cents)
-  = hidden_field_tag(:ticket_ids, @cart.tickets.map(&:id))
+  = hidden_field_tag(@cart.item_attribute, @cart.item_ids)
+  = hidden_field_tag(:purchase_type, @cart.class.name)
+  = hidden_field_tag(:stripe_token, "", id: "spec_stripe_token")
 
   .paypal
     img(src="https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif"
-        align="left" style="margin-right:7px;")
+      align="left" style="margin-right:7px;")
     span(style="font-size:11px; font-family: Arial, Verdana")
       | The safer, easier way to pay.
     = radio_button_tag(:payment_type,
-        :paypal, false,
-        class: "payment-type-radio", id: "paypal_radio")
+      :paypal, false,
+      class: "payment-type-radio", id: "paypal_radio")
   .credit_card
     | Credit Card
     = radio_button_tag(:payment_type,
-        :credit, true,
-        class: "payment-type-radio", id: "credit_radio")
+      :credit, true,
+      class: "payment-type-radio", id: "credit_radio")
 
   .bg-danger#error-text
 
